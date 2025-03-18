@@ -31,12 +31,14 @@
         </div>
         <nav id="nav-bar">
             <ul>
-                <li><a class="nav-link" href="#cart"><svg height="30px" viewBox="0 -960 960 960" width="30px"
-                            fill="#000000">
+                <li id="navcart"><a onclick="cartfullscr()" class="nav-link" href="#cart"><svg height="30px"
+                            viewBox="0 -960 960 960" width="30px" fill="#000000">
                             <path
                                 d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
-                        </svg></a></li>
-                <li><a class="nav-link" href="#overview">Home</a></li>
+                        </svg></a>
+                    </div>
+                </li>
+                <li><a onclick="home()" class="nav-link" href="#overview">Home</a></li>
                 <li id="nav-lst">
                     <button class="nav-list-btn" href="#list">List&dtrif;</button>
                     <div id="list-items" class="nav-list-btn">
@@ -67,17 +69,19 @@
             </ul>
         </nav>
     </header>
+    <hr>
 
 
 
     <section id="overview">
         <section id="banners">
-            <div id="banner-1" class="banner" style="background-color: #f9f9f9;">
+            <div id="banner-1" class="banner">
                 <div id="banner-video-div">
-                    <video id="video" class="ban-video" autoplay loop>
+                    <video id="video" class="ban-video" autoplay muted loop>
                         <source
-                            src="https://github.com/Dhanush-102/product-land-page-video/raw/refs/heads/main/vecteezy_potted-plant-continuous-line-drawing-illustration-for_27672225.mp4"
+                            src="https://github.com/Dhanush-102/product-land-page-video/raw/refs/heads/main/output.mp4"
                             type="video/webm" />
+                        <source src="output.mp4" type="video/mp4" />
                     </video>
                 </div>
                 <div id="banner-cap">
@@ -85,70 +89,11 @@
                     <p>To make the Earth a pleasent place with full of life</p>
                 </div>
             </div>
-
-            <div id="banner-2" class="banner" loop>
-                <div id="banner-video-div">
-                    <video id="video-2" class="ban-video" autoplay>
-                        <source
-                            src="https://github.com/Dhanush-102/product-land-page-video/raw/refs/heads/main/plant-grow-2.mp4"
-                            type="video/webm" />
-                    </video>
-                </div>
-                <div id="banner-cap">
-                    <h2>Grow Plants</h2>
-                    <p>To make the Earth a pleasent place with full of life</p>
-                </div>
-            </div>
-
-            <div id="banner-3" class="banner">
-                <div id="banner-video-div">
-                    <video id="video-3" class="ban-video" autoplay loop>
-                        <source
-                            src="https://github.com/Dhanush-102/product-land-page-video/raw/refs/heads/main/plant-grow-3.mp4"
-                            type="video/webm" />
-                    </video>
-                </div>
-                <div id="banner-cap">
-                    <h2>Grow Plants</h2>
-                    <p>To make the Earth a pleasent place with full of life</p>
-                </div>
-            </div>
-
-            <div id="banner-4" class="banner">
-                <div id="banner-video-div">
-                    <video id="video-4" class="ban-video" autoplay loop>
-                        <source
-                            src="https://github.com/Dhanush-102/product-land-page-video/raw/refs/heads/main/plant-grow-4.mp4"
-                            type="video/webm" />
-                    </video>
-                </div>
-                <div id="banner-cap">
-                    <h2>Grow Plants</h2>
-                    <p>To make the Earth a pleasent place with full of life</p>
-                </div>
-            </div>
-            <script>
-                let slideindex = 0;
-                lvslideshow();
-
-                function lvslideshow() {
-                    let i = 0;
-                    let lv = document.getElementsByClassName("banner");
-                    for (i = 0; i < lv.length; i++) {
-                        lv[i].style.display = "none";
-                    }
-                    slideindex++;
-                    if (slideindex >= lv.length) {
-                        slideindex = 0;
-                    }
-                    lv[slideindex].style.display = "block";
-                    setTimeout(lvslideshow, 10500);
-                }
-            </script>
         </section>
+        <hr>
 
         <section id="main-content">
-            <h1 style="font-size: 4rem; font-weight: 200; border-top: 1px solid black;">House Plants</h1>
+            <h1 style="font-size: 4rem; font-weight: 200;">House Plants</h1>
             <div id="plants">
                 <div id="plant-1" class="plantlist">
                     <figure>
@@ -158,6 +103,10 @@
                             <h3>Price - Rs500</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(1)" class="buy-btn">Buy</button>
+                        <button onclick="cart(1)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-2" class="plantlist">
                     <figure>
@@ -168,6 +117,10 @@
                             <h3>Price - Rs490</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(2)" class="buy-btn">Buy</button>
+                        <button onclick="cart(2)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-3" class="plantlist">
                     <figure>
@@ -178,6 +131,10 @@
                             <h3>Price - Rs425</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(3)" class="buy-btn">Buy</button>
+                        <button onclick="cart(3)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-4" class="plantlist">
                     <figure>
@@ -188,6 +145,10 @@
                             <h3>Price - Rs410</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(4)" class="buy-btn">Buy</button>
+                        <button onclick="cart(4)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-5" class="plantlist">
                     <figure>
@@ -198,6 +159,10 @@
                             <h3>Price - Rs450</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(5)" class="buy-btn">Buy</button>
+                        <button onclick="cart(5)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-6" class="plantlist">
                     <figure>
@@ -207,6 +172,10 @@
                             <h3>Price - Rs397</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(6)" class="buy-btn">Buy</button>
+                        <button onclick="cart(6)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-7" class="plantlist">
                     <figure>
@@ -217,6 +186,10 @@
                             <h3>Price - Rs328</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(7)" class="buy-btn">Buy</button>
+                        <button onclick="cart(7)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-8" class="plantlist">
                     <figure>
@@ -226,6 +199,10 @@
                             <h3>Price - Rs320</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(8)" class="buy-btn">Buy</button>
+                        <button onclick="cart(8)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-9" class="plantlist">
                     <figure>
@@ -235,6 +212,10 @@
                             <h3>Price - Rs367</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(9)" class="buy-btn">Buy</button>
+                        <button onclick="cart(9)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-10" class="plantlist">
                     <figure>
@@ -245,6 +226,10 @@
                             <h3>Price - Rs315</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(10)" class="buy-btn">Buy</button>
+                        <button onclick="cart(10)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-11" class="plantlist">
                     <figure>
@@ -256,6 +241,10 @@
                             <h3>Price - Rs309</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(11)" class="buy-btn">Buy</button>
+                        <button onclick="cart(11)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-12" class="plantlist">
                     <figure>
@@ -266,6 +255,10 @@
                             <h3>Price - Rs299</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(12)" class="buy-btn">Buy</button>
+                        <button onclick="cart(12)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-13" class="plantlist">
                     <figure>
@@ -275,6 +268,10 @@
                             <h3>Price - Rs500</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(13)" class="buy-btn">Buy</button>
+                        <button onclick="cart(13)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-14" class="plantlist">
                     <figure>
@@ -284,6 +281,10 @@
                             <h3>Price - Rs490</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(14)" class="buy-btn">Buy</button>
+                        <button onclick="cart(14)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-15" class="plantlist">
                     <figure>
@@ -293,6 +294,10 @@
                             <h3>Price - Rs425</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(15)" class="buy-btn">Buy</button>
+                        <button onclick="cart(15)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-16" class="plantlist">
                     <figure>
@@ -302,6 +307,10 @@
                             <h3>Price - Rs410</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(16)" class="buy-btn">Buy</button>
+                        <button onclick="cart(16)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-17" class="plantlist">
                     <figure>
@@ -312,6 +321,10 @@
                             <h3>Price - Rs450</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(17)" class="buy-btn">Buy</button>
+                        <button onclick="cart(17)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
                 <div id="plant-18" class="plantlist">
                     <figure>
@@ -322,13 +335,17 @@
                             <h3>Price - Rs397</h3>
                         </figcaption>
                     </figure>
+                    <div class="buycart">
+                        <button onclick="buypage(18)" class="buy-btn">Buy</button>
+                        <button onclick="cart(18)" class="cart-btn">Cart</button>
+                    </div>
                 </div>
             </div>
         </section>
 
         <div id="down-btns">
             <div class="btn-prev btns">
-                <button onclick="pageprev()" style="font-size:1.5rem;">
+                <button id="pageprev-btn" onclick="pageprev()" style="font-size:1.5rem;">
                     < </button>
             </div>
             <div class="btn-1 btns">
@@ -344,29 +361,105 @@
                 <button onclick="page1(4)">4</button>
             </div>
             <div class="btn-prev btns">
-                <button onclick="pagenext()" style="font-size:1.5rem;">></button>
+                <button id="pagenext-btn" onclick="pagenext()" style="font-size:1.5rem;">></button>
             </div>
         </div>
-        <script>
-            let index = 0;
-            let pages = ['<h1 style="font-size: 4rem; font-weight: 200; border-top: 1px solid black;">House Plants</h1> <div id="plants"> <div class="plant-1 plantlist"> <figure> <figcaption class="plant-caption">Golden pothos</figcaption> <img src="https://media.bunches.co.uk/products/ptempp-1.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs500</h3></figcaption> </figure> </div> <div class="plant-2 plantlist"> <figure> <figcaption class="plant-caption">Swiss cheese</figcaption> <img src="https://a6adc47bb216dfe8a383-49bf67815854ec9e2c04a8f4abb9cbf5.ssl.cf3.rackcdn.com/images/products2/pl/20/00/02/77/pl2000027702_card_lg.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs490</h3></figcaption> </figure> </div> <div class="plant-3 plantlist"> <figure> <figcaption class="plant-caption">corn plant</figcaption> <img src="https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Dracaena_Corn_Plant_FGT_1_1024x1024.jpg?v=1604093469" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs425</h3></figcaption> </figure> </div> <div class="plant-4 plantlist"> <figure> <figcaption class="plant-caption">Spider plant</figcaption> <img src="https://a6adc47bb216dfe8a383-49bf67815854ec9e2c04a8f4abb9cbf5.ssl.cf3.rackcdn.com/images/products2/pl/20/00/02/72/pl2000027236_card_lg.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs410</h3></figcaption> </figure> </div> <div class="plant-5 plantlist"> <figure> <figcaption class="plant-caption">Zanzibar gem </figcaption> <img src="https://cb2.scene7.com/is/image/CB2/ZanzibarGemZzPlntWtPt6inSHF22/$web_pdp_main_carousel_md$/220613151901/live-zanzibar-gem-zz-plant-in-white-ceramic-pot-6.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs450</h3></figcaption> </figure> </div> <div class="plant-6 plantlist"> <figure> <figcaption class="plant-caption">Madagascar dragon tree</figcaption> <img src="https://www.plantvine.com/plants/Dracaena-Marginata-Cane-2.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs397</h3></figcaption> </figure> </div> <div class="plant-7 plantlist"> <figure> <figcaption class="plant-caption">Rubber tree</figcaption> <img src="https://cdn.apartmenttherapy.info/image/upload/v1665497422/gen-workflow/product-database/bloomscape_burgundy-rubber-tree_lg_stone.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs328</h3></figcaption> </figure> </div> <div class="plant-8 plantlist"> <figure> <figcaption class="plant-caption">Arrowhead plant </figcaption> <img src="https://thursd.com/storage/media/48448/How-to-care-for-the-arrowhead-plant.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs320</h3></figcaption> </figure> </div> <div class="plant-9 plantlist"> <figure> <figcaption class="plant-caption">English ivy</figcaption> <img src="https://www.hayleysqualityseed.com/wp-content/uploads/2022/01/Foliage-2.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> </div> <div class="plant-10 plantlist"> <figure> <figcaption class="plant-caption">Silver inch plant</figcaption> <img src="https://cdn.thestem.co.uk/production/imager-transforms/digitaloceanspaces/product-images/plants/silver-inch-plant/134177/silver-inch-plant-in-fiberclay-stone-plant-pot_024821db5276e1daecbb89819c3d7038.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> </div> <div class="plant-11 plantlist"> <figure> <figcaption class="plant-caption">Garden croton</figcaption> <img src="https://plantscraze.com/wp-content/uploads/2022/06/106142967_267513108008446_4401052587526710010_n.jpg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> </div> <div class="plant-12 plantlist"> <figure> <figcaption class="plant-caption">Lucky bamboo</figcaption> <img src="https://gardenerspath.com/wp-content/uploads/2022/03/How-to-Grow-Lucky-Bamboo-Feature.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> </div> <div class="plant-13 plantlist"> <figure> <figcaption class="plant-caption">Dwarf umbrella </figcaption> <img src="https://www.plantvine.com/plants/Schefflera-MEdium-Compacta-bush-819x1024.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs500</h3></figcaption> </figure> </div> <div class="plant-14 plantlist"> <figure> <figcaption class="plant-caption">Weeping fig</figcaption> <img src="https://images.myplantin.com/1242_2688/253/main.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs490</h3></figcaption> </figure> </div> <div class="plant-15 plantlist"> <figure> <figcaption class="plant-caption">parlor palmt</figcaption> <img src="https://www.plants.com/images/157645sgpParlorPalm_20220516-1652725705242.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs425</h3></figcaption> </figure> </div> <div class="plant-16 plantlist"> <figure> <figcaption class="plant-caption">Baby rubber plant </figcaption> <img src="https://www.plants.com/images/177047pai_20200929-1601409903745.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs410</h3></figcaption> </figure> </div> <div class="plant-17 plantlist"> <figure> <figcaption class="plant-caption">Fiddle-leaf fig</figcaption> <img src="https://image.floranext.com/instances/bloomnwa_com/wysiwyg/3/2/3296-01_1.jpeg?gen=1" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs450</h3></figcaption> </figure> </div> <div class="plant-18 plantlist"> <figure> <figcaption class="plant-caption">Heartleaf philodendron</figcaption> <img src="https://cdn.shopify.com/s/files/1/1595/2239/products/PlantifyMarchWeb-14.jpg?v=1562310648" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs397</h3></figcaption> </figure> </div> </div>',
-                '<h1 style="font-size: 4rem; font-weight: 200; border-top: 1px solid black;">House Plants</h1> <div id="plants"> <div class="plant-19 plantlist"> <figure> <figcaption class="plant-caption">Chinese money plant</figcaption> <img src="https://plantworldlondon.com/wp-content/uploads/2021/06/Pilea-Peperomioides-CHINESE-MONEY-PLANT-1.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs328</h3></figcaption> </figure> </div> <div class="plant-20 plantlist"> <figure> <figcaption class="plant-caption">Common lantana</figcaption> <img src="https://files.greenhousegrower.com/greenhousegrow/wp-content/uploads/2012/10/38376.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs320</h3></figcaption> </figure> </div> <div class="plant-21 plantlist"> <figure> <figcaption class="plant-caption">spineless yucca</figcaption> <img src="https://www.gardenersdream.co.uk/images/spineless-yucca-yucca-elephantipes-p7337-52497_medium.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> </div> <div class="plant-22 plantlist"> <figure> <figcaption class="plant-caption">Yellow butterfly palm</figcaption> <img src="https://urbantropicals.com/wp-content/uploads/PA-A-LUTE-7-600x800.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> </div> <div class="plant-23 plantlist"> <figure> <figcaption class="plant-caption">Boston fern</figcaption> <img src="https://images.esellerpro.com/3048/I/619/56/Nephrolepis%20boston%20fern-3.jpg" /> <figcaption class="plant-price" style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> </div> <div class="plant-24 plantlist"> <figure> <figcaption class="plant-caption"> Polka dot planto</figcaption> <img src="https://static.s123-cdn-static-d.com/uploads/1826974/2000_5f70c74cca038.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> </div> <div class="plant-25 plantlist"> <figure> <figcaption class="plant-caption">Prayer plant</figcaption> <img src="https://www.whiteflowerfarm.com/mas_assets/cache/image/8/c/c/e/36046.Jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs500</h3></figcaption> </figure> </div> <div class="plant-26 plantlist"> <figure> <figcaption class="plant-caption">Scarlet-star</figcaption> <img src="https://cdn.thestem.co.uk/production/imager-transforms/digitaloceanspaces/product-images/plants/scarlet-star/282242/Scarlet-Star-1_8add654b2a7fa0a5454960e60762b896.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs490</h3></figcaption> </figure> </div> <div class="plant-27 plantlist"> <figure> <figcaption class="plant-caption">Bird of paradise</figcaption> <img src="https://i.pinimg.com/originals/b5/25/f4/b525f48c47af034a36a5a3b5383238fc.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs425</h3></figcaption> </figure> </div> <div class="plant-28 plantlist"> <figure> <figcaption class="plant-caption">nerve plant</figcaption> <img src="https://seedplex.in/storage/2022/12/White-Nerve-Plant-Fittonia-Albivenis.webp" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs410</h3></figcaption> </figure> </div> <div class="plant-29 plantlist"> <figure> <figcaption class="plant-caption">Sago palm </figcaption> <img src="https://www.shipmyplants.com/wp-content/uploads/2023/08/king-sago-palm-2013254.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs450</h3></figcaption> </figure> </div> <div class="plant-30 plantlist"> <figure> <figcaption class="plant-caption">busy lizzie</figcaption> <img src="https://www.brooksidenursery.co.uk/media/catalog/product/cache/2be6b7d2f1efc1891b21b74af0ca37fe/W/h/Whitebeacon_1__1620e239bc96d3.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs397</h3></figcaption> </figure> </div> <div class="plant-31 plantlist"> <figure> <figcaption class="plant-caption">painted leaf begonia</figcaption> <img src=https://vertnook.com/wp-content/uploads/2022/12/Painted-Begonia-V4_Cropped_1200-600x602.png" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs328</h3></figcaption> </figure> </div> <div class="plant-32 plantlist"> <figure> <figcaption class="plant-caption">Oyster plant</figcaption> <img src="https://www.thespruce.com/thmb/cmYPRkw3_a-wDSlwtvZjzwel4xw=/3000x2000/filters:fill(auto,1)/growing-oyster-plants-5082981-1-dc71da90fb7f4a57a363243718361dbc.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs320</h3></figcaption> </figure> </div> <div class="plant-33 plantlist"> <figure> <figcaption class="plant-caption">Chinese evergreen</figcaption> <img src="https://thehometome.com/wp-content/uploads/2021/07/aglaonema-cutlass-.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> </div> <div class="plant-34 plantlist"> <figure> <figcaption class="plant-caption">Elephant Ear</figcaption> <img src="https://i.etsystatic.com/30621784/r/il/0ffa0c/3270424811/il_fullxfull.3270424811_siil.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> </div> <div class="plant-35 plantlist"> <figure> <figcaption class="plant-caption">Rose-Painted Calathea</figcaption> <img src="https://thecitywild.com/wp-content/uploads/2020/02/Calathea-Roseopicta-care-guide-scaled-1.jpg" /> <figcaption class="plant-price" style="position: relative; justify-self: flex-start;" "><h3>Price - Rs309</h3></figcaption> </figure> </div> <div class="plant-36 plantlist"> <figure> <figcaption class="plant-caption">emerald ripple</figcaption> <img src="https://chalethelp.zendesk.com/hc/article_attachments/360087384971/PECA6w.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> </div> </div>',
-                '<h1 style="font-size: 4rem; font-weight: 200; border-top: 1px solid black;">House Plants</h1> <div id="plants"> <div class="plant-37 plantlist"> <figure> <figcaption class="plant-caption">Pink calla lily</figcaption> <img src="https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/P4022FC_LOL_preset_ftd-mx-hero-lv-new.jpeg?v=1676492206" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> </div> <div class="plant-38 plantlist"> <figure> <figcaption class="plant-caption">Song of india plant</figcaption> <img src="https://www.thespruce.com/thmb/zJTdCAOKGTbC7UpuLd5SImyp9UE=/3000x2000/filters:no_upscale():max_bytes(150000):strip_icc()/growing-the-song-of-india-5087083-5-96244da89c8a4053a6d4c79207bdaf49.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> </div> <div class="plant-39 plantlist"> <figure> <figcaption class="plant-caption">False shamrock</figcaption> <img src="https://img.crocdn.co.uk/images/products2/pl/20/00/03/57/pl2000035793.jpg?width=940&height=940" /> <figcaption class="plant-price" style="position: relative; justify-self: flex-start;" "><h3>Price - Rs309</h3></figcaption> </figure> </div> <div class="plant-40 plantlist"> <figure> <figcaption class="plant-caption">blushing philodendron</figcaption> <img src="https://bestsoilforhouseplants.com/wp-content/uploads/2022/08/EWQ3-iNXgAEeXmu-1024x683.jpeg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> </div> <div class="plant-41 plantlist"> <figure> <figcaption class="plant-caption">Swedish ivy</figcaption> <img src="https://patch.com/img/cdn20/users/25485567/20221009/022038/ivy-1___09142035511.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs450</h3></figcaption> </figure> </div> <div class="plant-42 plantlist"> <figure> <figcaption class="plant-caption">birds nest fern</figcaption> <img src="https://www.gardeningknowhow.com/wp-content/uploads/2012/02/birds-nest-fern-1.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs397</h3></figcaption> </figure> </div> <div class="plant-43 plantlist"> <figure> <figcaption class="plant-caption">Mexican mint</figcaption> <img src="https://media.greg.app/Y2FyZS1wbGFudC1wcm9maWxlL21leGljYW5fbWludC5qcGc=?format=pjpeg&optimize=high&auto=webp&precrop=1000:1000,smart&fit=crop&width=1000&height=1000" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs328</h3></figcaption> </figure> </div> <div class="plant-44 plantlist"> <figure> <figcaption class="plant-caption">Calla lily</figcaption> <img src="http://www.flowersbypostdirect.co.uk/wp-content/uploads/2019/05/PRODUCT_PLANTS_Yellow_Calla_Lily_Plant_image1_460x460.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs320</h3></figcaption> </figure> </div> <div class="plant-45 plantlist"> <figure> <figcaption class="plant-caption">Peacock plant</figcaption> <img src="https://tse2.mm.bing.net/th?id=OIP.vDQEw8Q_WenWZyeZcHofXQHaHa&pid=Api&P=0&h=180" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> </div> <div class="plant-46 plantlist"> <figure> <figcaption class="plant-caption">Small-leaf spiderwort</figcaption> <img src="https://amulyanursery.com/wp-content/uploads/2020/01/buy-fluminensis-trandescantia-small-leaf-spiderwort-02.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> </div> <div class="plant-47 plantlist"> <figure> <figcaption class="plant-caption">Moth orchid</figcaption> <img src="http://img.crocdn.co.uk/images/products2/pl/20/00/02/81/pl2000028180_card6_lg.jpg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> </div> <div class="plant-48 plantlist"> <figure> <figcaption class="plant-caption">Cat palm</figcaption> <img src="https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/9aa0b63dad79--Catpalm-10IN-Grower-639a78.jpg?v=1611509773" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> </div> <div class="plant-49 plantlist"> <figure> <figcaption class="plant-caption">Rattlesnake plant</figcaption> <img src="https://www.thespruce.com/thmb/8N5wbgb5ThC8Kz3alYuLeiWEg2E=/3000x0/filters:no_upscale():max_bytes(150000):strip_icc()/growing-rattlesnake-plants-5088292-3-c37f03dd6a0e491a91e837d28d06b1f2.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> </div> <div class="plant-50 plantlist"> <figure> <figcaption class="plant-caption">Pin stripe plant</figcaption> <img src="https://terrariumtribe.com/wp-content/uploads/2021/07/Calathea-ornata-Pinstripe-Plant-4-600x900-1.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> </div> <div class="plant-51 plantlist"> <figure> <figcaption class="plant-caption">Norfolk island pine</figcaption> <img src="http://hgtvhome.sndimg.com/content/dam/images/grdn/fullset/2015/8/17/0/CI_norfolk-island-pine-araucaria.jpg.rend.hgtvcom.1280.1280.jpeg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> </div> <div class="plant-52 plantlist"> <figure> <figcaption class="plant-caption">Common asparagus fern</figcaption> <img src="https://i.etsystatic.com/20365330/r/il/4d8e80/2542154388/il_1140xN.2542154388_5i6o.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> </div> <div class="plant-53 plantlist"> <figure> <figcaption class="plant-caption">Persian cyclamen</figcaption> <img src="https://gardenseedsmarket.com/images/detailed/53/013657.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> </div> <div class="plant-55 plantlist"> <figure> <figcaption class="plant-caption">Japanese laurel</figcaption> <img src="https://www.charellagardens.co.uk/media/catalog/product/cache/b375fab3725443110d0577058efbd00d/a/u/aucuba_japonica_15_litre_2_.jpg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> </div> </div>',
-                '<h1 style="font-size: 4rem; font-weight: 200; border-top: 1px solid black;">House Plants</h1> <div id="plants"></div>'];
 
-            let navlist = ['<a href="#plant-1">Golden potho</a> <a href="#plant-2">Swiss cheese</a> <a href="#plant-3">corn plant</a> <a href="#plant-4">Spider plant</a> <a href="#plant-5">Zanzibar gem</a> <a href="#plant-6">Madagascar dragon tree</a> <a href="#plant-7">Rubber tree</a> <a href="#plant-8">Arrowhead plant</a> <a href="#plant-9">English ivy</a> <a href="#plant-10">Silver inch plant</a> <a href="#plant-11">Garden croton</a> <a href="#plant-12">Lucky bamboo</a> <a href="#plant-13">Dwarf umbrella</a> <a href="#plant-14">Weeping fig</a> <a href="#plant-15">parlor palmt</a> <a href="#plant-16">Baby rubber plant</a> <a href="#plant-17">Fiddle-leaf fig</a> <a href="#plant-18">Heartleaf philodendron</a>', '<a href="#plant-19">Chinese money plant</a> <a href="#plant-20">Common lantana</a> <a href="#plant-21">spineless yucca</a> <a href="#plant-22">Yellow butterfly palm</a> <a href="#plant-23">Boston fern</a> <a href="#plant-24">Polka dot planto</a> <a href="#plant-25">Prayer plant</a> <a href="#plant-26">Scarlet-star</a> <a href="#plant-27">Bird of paradise</a> <a href="#plant-28">nerve plant</a> <a href="#plant-29">Sago palm</a> <a href="#plant-30">busy lizzie</a> <a href="#plant-31">painted leaf begonia</a> <a href="#plant-32">Oyster plant</a> <a href="#plant-33">Chinese evergreen</a> <a href="#plant-34">Elephant Ear</a> <a href="#plant-35">Rose-Painted Calathea</a><a href="#plant-36">emerald ripple</a>', '<a href="#plant-37">Pink calla lily</a> <a href="#plant-38">Song of india plant</a> <a href="#plant-39">False shamrock</a> <a href="#plant-40">blushing philodendron</a> <a href="#plant-41">Swedish ivy</a> <a href="#plant-42"birds nest fern</a> <a href="#plant-43">Mexican mint</a> <a href="#plant-44">Calla lily</a> <a href="#plant-45">Peacock plant</a> <a href="#plant-46">Small-leaf spiderwort</a> <a href="#plant-47">Moth orchid</a> <a href="#plant-48">Cat palm</a> <a href="#plant-49">Rattlesnake plant</a> <a href="#plant-50">Pin stripe plant</a> <a href="#plant-51">Norfolk island pine</a> <a href="#plant-52">Common asparagus fernt</a> <a href="#plant-53">Persian cyclamen</a> <a href="#plant-54">Japanese laurel</a>'];
-            function page1(i) {
-                index = i;
-                document.getElementById("main-content").innerHTML = pages[i - 1];
-                document.getElementById("list-items").innerHTML = navlist[i - 1];
+    </section>
+    <script>
+        var index = 0;
+        let pages = ['<h1 style="font-size: 4rem; font-weight: 200;">House Plants</h1> <div id="plants"> <div id="plant-1" class="plantlist"> <figure> <figcaption class="plant-caption">Golden pothos</figcaption> <img src="https://media.bunches.co.uk/products/ptempp-1.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs500</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(1)" class="buy-btn">Buy</button> <button onclick="cart(1)" class="cart-btn">Cart</button> </div> </div> <div id="plant-2" class="plantlist"> <figure> <figcaption class="plant-caption">Swiss cheese</figcaption> <img src="https://a6adc47bb216dfe8a383-49bf67815854ec9e2c04a8f4abb9cbf5.ssl.cf3.rackcdn.com/images/products2/pl/20/00/02/77/pl2000027702_card_lg.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs490</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(2)" class="buy-btn">Buy</button> <button onclick="cart(2)" class="cart-btn">Cart</button> </div> </div> <div id="plant-3"class="plantlist"> <figure> <figcaption class="plant-caption">corn plant</figcaption> <img src="https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Dracaena_Corn_Plant_FGT_1_1024x1024.jpg?v=1604093469" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs425</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(3)" class="buy-btn">Buy</button> <button onclick="cart(3)" class="cart-btn">Cart</button> </div> </div> <div id="plant-4" class="plantlist"> <figure> <figcaption class="plant-caption">Spider plant</figcaption> <img src="https://a6adc47bb216dfe8a383-49bf67815854ec9e2c04a8f4abb9cbf5.ssl.cf3.rackcdn.com/images/products2/pl/20/00/02/72/pl2000027236_card_lg.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs410</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(4)" class="buy-btn">Buy</button> <button onclick="cart(4)" class="cart-btn">Cart</button> </div> </div> <div id="plant-5" class="plantlist"> <figure> <figcaption class="plant-caption">Zanzibar gem </figcaption> <img src="https://cb2.scene7.com/is/image/CB2/ZanzibarGemZzPlntWtPt6inSHF22/$web_pdp_main_carousel_md$/220613151901/live-zanzibar-gem-zz-plant-in-white-ceramic-pot-6.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs450</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(5)" class="buy-btn">Buy</button> <button onclick="cart(5)" class="cart-btn">Cart</button> </div> </div> <div id="plant-6" class="plantlist""> <figure> <figcaption class="plant-caption">Madagascar dragon tree</figcaption> <img src="https://www.plantvine.com/plants/Dracaena-Marginata-Cane-2.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs397</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(6)" class="buy-btn">Buy</button> <button onclick="cart(6)" class="cart-btn">Cart</button> </div> </div> <div id="plant-7" class="plantlist"> <figure> <figcaption class="plant-caption">Rubber tree</figcaption> <img src="https://cdn.apartmenttherapy.info/image/upload/v1665497422/gen-workflow/product-database/bloomscape_burgundy-rubber-tree_lg_stone.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs328</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(7)" class="buy-btn">Buy</button> <button onclick="cart(7)" class="cart-btn">Cart</button> </div> </div> <div id="plant-8" class="plantlist"> <figure> <figcaption class="plant-caption">Arrowhead plant </figcaption> <img src="https://thursd.com/storage/media/48448/How-to-care-for-the-arrowhead-plant.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs320</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(8)" class="buy-btn">Buy</button> <button onclick="cart(8)" class="cart-btn">Cart</button> </div> </div> <div id="plant-9" class="plantlist"> <figure> <figcaption class="plant-caption">English ivy</figcaption> <img src="https://www.hayleysqualityseed.com/wp-content/uploads/2022/01/Foliage-2.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(9)" class="buy-btn">Buy</button> <button onclick="cart(9)" class="cart-btn">Cart</button> </div> </div> <div id="plant-10" class="plantlist"> <figure> <figcaption class="plant-caption">Silver inch plant</figcaption> <img src="https://cdn.thestem.co.uk/production/imager-transforms/digitaloceanspaces/product-images/plants/silver-inch-plant/134177/silver-inch-plant-in-fiberclay-stone-plant-pot_024821db5276e1daecbb89819c3d7038.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(10)" class="buy-btn">Buy</button> <button onclick="cart(10)" class="cart-btn">Cart</button> </div> </div> <div id="plant-11" class="plantlist"> <figure> <figcaption class="plant-caption">Garden croton</figcaption> <img src="https://plantscraze.com/wp-content/uploads/2022/06/106142967_267513108008446_4401052587526710010_n.jpg" /> <figcaption class="plant-price" style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(11)" class="buy-btn">Buy</button> <button onclick="cart(11)" class="cart-btn">Cart</button> </div> </div> <div id="plant-12" class="plantlist"> <figure> <figcaption class="plant-caption">Lucky bamboo</figcaption> <img src="https://gardenerspath.com/wp-content/uploads/2022/03/How-to-Grow-Lucky-Bamboo-Feature.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(12)" class="buy-btn">Buy</button> <button onclick="cart(12)" class="cart-btn">Cart</button> </div> </div> <div id="plant-13" class="plantlist"> <figure> <figcaption class="plant-caption">Dwarf umbrella </figcaption> <img src="https://www.plantvine.com/plants/Schefflera-MEdium-Compacta-bush-819x1024.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs500</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(13)" class="buy-btn">Buy</button> <button onclick="cart(13)" class="cart-btn">Cart</button> </div> </div> <div id="plant-14" class="plantlist"> <figure> <figcaption class="plant-caption">Weeping fig</figcaption> <img src="https://images.myplantin.com/1242_2688/253/main.jpg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs490</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(14)" class="buy-btn">Buy</button> <button onclick="cart(14)" class="cart-btn">Cart</button> </div> </div> <div id="plant-15" class="plantlist"> <figure> <figcaption class="plant-caption">parlor palmt</figcaption> <img src="https://www.plants.com/images/157645sgpParlorPalm_20220516-1652725705242.jpg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs425</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(15)" class="buy-btn">Buy</button> <button onclick="cart(15)" class="cart-btn">Cart</button> </div> </div> <div id="plant-16" class="plantlist"> <figure> <figcaption class="plant-caption">Baby rubber plant </figcaption> <img src="https://www.plants.com/images/177047pai_20200929-1601409903745.jpg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs410</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(16)" class="buy-btn">Buy</button> <button onclick="cart(16)" class="cart-btn">Cart</button> </div> </div> <div id="plant-17" class="plantlist"> <figure> <figcaption class="plant-caption">Fiddle-leaf fig</figcaption> <img src="https://image.floranext.com/instances/bloomnwa_com/wysiwyg/3/2/3296-01_1.jpeg?gen=1" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs450</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(17)" class="buy-btn">Buy</button> <button onclick="cart(17)" class="cart-btn">Cart</button> </div> </div> <div id="plant-18" class="plantlist"> <figure> <figcaption class="plant-caption">Heartleaf philodendron</figcaption> <img src="https://cdn.shopify.com/s/files/1/1595/2239/products/PlantifyMarchWeb-14.jpg?v=1562310648" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs397</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(18)" class="buy-btn">Buy</button> <button onclick="cart(18)" class="cart-btn">Cart</button> </div> </div> </div>',
+            '<h1 style="font-size: 4rem; font-weight: 200; ">House Plants</h1> <div id="plants"> <div id="plant-19" class="plantlist"> <figure> <figcaption class="plant-caption">Chinese money plant</figcaption> <img src="https://plantworldlondon.com/wp-content/uploads/2021/06/Pilea-Peperomioides-CHINESE-MONEY-PLANT-1.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs328</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(19)" class="buy-btn">Buy</button> <button onclick="cart(19)" class="cart-btn">Cart</button> </div> </div> <div id="plant-20" class="plantlist"> <figure> <figcaption class="plant-caption">Common lantana</figcaption> <img src="https://files.greenhousegrower.com/greenhousegrow/wp-content/uploads/2012/10/38376.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs320</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(20)" class="buy-btn">Buy</button> <button onclick="cart(20)" class="cart-btn">Cart</button> </div> </div> <div id="plant-21" class="plantlist"> <figure> <figcaption class="plant-caption">spineless yucca</figcaption> <img src="https://houseplantcentral.com/wp-content/uploads/2022/08/Yucca-elephantipes.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(21)" class="buy-btn">Buy</button> <button onclick="cart(21)" class="cart-btn">Cart</button> </div> </div> <div id="plant-22" class="plantlist"> <figure> <figcaption class="plant-caption">Yellow butterfly palm</figcaption> <img src="https://urbantropicals.com/wp-content/uploads/PA-A-LUTE-7-600x800.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(22)" class="buy-btn">Buy</button> <button onclick="cart(22)" class="cart-btn">Cart</button> </div> </div> <div id="plant-23" class="plantlist"> <figure> <figcaption class="plant-caption">Boston fern</figcaption> <img src="https://images.esellerpro.com/3048/I/619/56/Nephrolepis%20boston%20fern-3.jpg" /> <figcaption class="plant-price" style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(23)" class="buy-btn">Buy</button> <button onclick="cart(23)" class="cart-btn">Cart</button> </div> </div> <div id="plant-24" class="plantlist"> <figure> <figcaption class="plant-caption"> Polka dot planto</figcaption> <img src="https://static.s123-cdn-static-d.com/uploads/1826974/2000_5f70c74cca038.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(24)" class="buy-btn">Buy</button> <button onclick="cart(24)" class="cart-btn">Cart</button> </div> </div> <div id="plant-25" class="plantlist"> <figure> <figcaption class="plant-caption">Prayer plant</figcaption> <img src="https://www.whiteflowerfarm.com/mas_assets/cache/image/8/c/c/e/36046.Jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs500</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(25)" class="buy-btn">Buy</button> <button onclick="cart(25)" class="cart-btn">Cart</button> </div> </div> <div id="plant-26" class="plantlist"> <figure> <figcaption class="plant-caption">Scarlet-star</figcaption> <img src="https://cdn.thestem.co.uk/production/imager-transforms/digitaloceanspaces/product-images/plants/scarlet-star/282242/Scarlet-Star-1_8add654b2a7fa0a5454960e60762b896.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs490</h3></figcaption> </figure><div class="buycart"> <button onclick="buypage(26)" class="buy-btn">Buy</button> <button onclick="cart(26)" class="cart-btn">Cart</button> </div> </div> <div id="plant-27" class="plantlist"> <figure> <figcaption class="plant-caption">Bird of paradise</figcaption> <img src="https://i.pinimg.com/originals/b5/25/f4/b525f48c47af034a36a5a3b5383238fc.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs425</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(27)" class="buy-btn">Buy</button> <button onclick="cart(27)" class="cart-btn">Cart</button> </div></div> <div id="plant-28" class="plantlist"> <figure> <figcaption class="plant-caption">nerve plant</figcaption> <img src="https://seedplex.in/storage/2022/12/White-Nerve-Plant-Fittonia-Albivenis.webp" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs410</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(28)" class="buy-btn">Buy</button> <button onclick="cart(28)" class="cart-btn">Cart</button> </div> </div> <div id="plant-29" class="plantlist"> <figure> <figcaption class="plant-caption">Sago palm </figcaption> <img src="https://www.shipmyplants.com/wp-content/uploads/2023/08/king-sago-palm-2013254.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs450</h3></figcaption> </figure><div class="buycart"> <button onclick="buypage(29)" class="buy-btn">Buy</button> <button onclick="cart(29)" class="cart-btn">Cart</button> </div> </div> <div id="plant-30" class="plantlist"> <figure> <figcaption class="plant-caption">busy lizzie</figcaption> <img src="https://www.brooksidenursery.co.uk/media/catalog/product/cache/2be6b7d2f1efc1891b21b74af0ca37fe/W/h/Whitebeacon_1__1620e239bc96d3.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs397</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(30)" class="buy-btn">Buy</button> <button onclick="cart(30)" class="cart-btn">Cart</button> </div> </div> <div id="plant-31" class="plantlist"> <figure> <figcaption class="plant-caption">painted leaf begonia</figcaption> <img src=https://vertnook.com/wp-content/uploads/2022/12/Painted-Begonia-V4_Cropped_1200-600x602.png" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs328</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(31)" class="buy-btn">Buy</button> <button onclick="cart(31)" class="cart-btn">Cart</button> </div> </div> <div id="plant-32" class="plantlist"> <figure> <figcaption class="plant-caption">Oyster plant</figcaption> <img src="https://www.thespruce.com/thmb/cmYPRkw3_a-wDSlwtvZjzwel4xw=/3000x2000/filters:fill(auto,1)/growing-oyster-plants-5082981-1-dc71da90fb7f4a57a363243718361dbc.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs320</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(32)" class="buy-btn">Buy</button> <button onclick="cart(32)" class="cart-btn">Cart</button> </div> </div> <div id="plant-33" class="plantlist"> <figure> <figcaption class="plant-caption">Chinese evergreen</figcaption> <img src="https://thehometome.com/wp-content/uploads/2021/07/aglaonema-cutlass-.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(33)" class="buy-btn">Buy</button> <button onclick="cart(33)" class="cart-btn">Cart</button> </div> </div> <div id="plant-34" class="plantlist"> <figure> <figcaption class="plant-caption">Elephant Ear</figcaption> <img src="https://i.etsystatic.com/30621784/r/il/0ffa0c/3270424811/il_fullxfull.3270424811_siil.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(34)" class="buy-btn">Buy</button> <button onclick="cart(34)" class="cart-btn">Cart</button> </div> </div> <div id="plant-35" class="plantlist"> <figure> <figcaption class="plant-caption">Rose-Painted Calathea</figcaption> <img src="https://thecitywild.com/wp-content/uploads/2020/02/Calathea-Roseopicta-care-guide-scaled-1.jpg" /> <figcaption class="plant-price" style="position: relative; justify-self: flex-start;" "><h3>Price - Rs309</h3></figcaption> </figure><div class="buycart"> <button onclick="buypage(35)" class="buy-btn">Buy</button> <button onclick="cart(35)" class="cart-btn">Cart</button> </div> </div> <div id="plant-36" class="plantlist"> <figure> <figcaption class="plant-caption">emerald ripple</figcaption> <img src="https://chalethelp.zendesk.com/hc/article_attachments/360087384971/PECA6w.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(36)" class="buy-btn">Buy</button> <button onclick="cart(36)" class="cart-btn">Cart</button> </div> </div> </div>',
+            '<h1 style="font-size: 4rem; font-weight: 200;">House Plants</h1> <div id="plants"> <div id="plant-37" class="plantlist"> <figure> <figcaption class="plant-caption">Pink calla lily</figcaption> <img src="https://cdn.shopify.com/s/files/1/0507/3754/5401/t/1/assets/P4022FC_LOL_preset_ftd-mx-hero-lv-new.jpeg?v=1676492206" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(37)" class="buy-btn">Buy</button> <button onclick="cart(37)" class="cart-btn">Cart</button> </div> </div> <div id="plant-38" class="plantlist"> <figure> <figcaption class="plant-caption">Song of india plant</figcaption> <img src="https://www.thespruce.com/thmb/zJTdCAOKGTbC7UpuLd5SImyp9UE=/3000x2000/filters:no_upscale():max_bytes(150000):strip_icc()/growing-the-song-of-india-5087083-5-96244da89c8a4053a6d4c79207bdaf49.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure><div class="buycart"> <button onclick="buypage(38)" class="buy-btn">Buy</button> <button onclick="cart(38)" class="cart-btn">Cart</button> </div> </div> <div id="plant-39" class="plantlist"> <figure> <figcaption class="plant-caption">False shamrock</figcaption> <img src="https://img.crocdn.co.uk/images/products2/pl/20/00/03/57/pl2000035793.jpg?width=940&height=940" /> <figcaption class="plant-price" style="position: relative; justify-self: flex-start;" "><h3>Price - Rs309</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(39)" class="buy-btn">Buy</button> <button onclick="cart(39)" class="cart-btn">Cart</button> </div> </div> <div id="plant-40" class="plantlist"> <figure> <figcaption class="plant-caption">blushing philodendron</figcaption> <img src="https://bestsoilforhouseplants.com/wp-content/uploads/2022/08/EWQ3-iNXgAEeXmu-1024x683.jpeg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(40)" class="buy-btn">Buy</button> <button onclick="cart(40)" class="cart-btn">Cart</button> </div> </div> <div id="plant-41" class="plantlist"> <figure> <figcaption class="plant-caption">Swedish ivy</figcaption> <img src="https://patch.com/img/cdn20/users/25485567/20221009/022038/ivy-1___09142035511.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs450</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(41)" class="buy-btn">Buy</button> <button onclick="cart(41)" class="cart-btn">Cart</button> </div> </div> <div id="plant-42" class="plantlist"> <figure> <figcaption class="plant-caption">birds nest fern</figcaption> <img src="https://www.gardeningknowhow.com/wp-content/uploads/2012/02/birds-nest-fern-1.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs397</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(42)" class="buy-btn">Buy</button> <button onclick="cart(42)" class="cart-btn">Cart</button> </div> </div> <div id="plant-43" class="plantlist"> <figure> <figcaption class="plant-caption">Mexican mint</figcaption> <img src="https://media.greg.app/Y2FyZS1wbGFudC1wcm9maWxlL21leGljYW5fbWludC5qcGc=?format=pjpeg&optimize=high&auto=webp&precrop=1000:1000,smart&fit=crop&width=1000&height=1000" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs328</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(43)" class="buy-btn">Buy</button> <button onclick="cart(43)" class="cart-btn">Cart</button> </div> </div> <div id="plant-44" class="plantlist"> <figure> <figcaption class="plant-caption">Calla lily</figcaption> <img src="http://www.flowersbypostdirect.co.uk/wp-content/uploads/2019/05/PRODUCT_PLANTS_Yellow_Calla_Lily_Plant_image1_460x460.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs320</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(44)" class="buy-btn">Buy</button> <button onclick="cart(44)" class="cart-btn">Cart</button> </div> </div> <div id="plant-45" class="plantlist"> <figure> <figcaption class="plant-caption">Peacock plant</figcaption> <img src="https://tse2.mm.bing.net/th?id=OIP.vDQEw8Q_WenWZyeZcHofXQHaHa&pid=Api&P=0&h=180" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(45)" class="buy-btn">Buy</button> <button onclick="cart(45)" class="cart-btn">Cart</button> </div></div> <div id="plant-46" class="plantlist"> <figure> <figcaption class="plant-caption">Small-leaf spiderwort</figcaption> <img src="https://amulyanursery.com/wp-content/uploads/2020/01/buy-fluminensis-trandescantia-small-leaf-spiderwort-02.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(46)" class="buy-btn">Buy</button> <button onclick="cart(46)" class="cart-btn">Cart</button> </div> </div> <div id="plant-47" class="plantlist"> <figure> <figcaption class="plant-caption">Moth orchid</figcaption> <img src="http://img.crocdn.co.uk/images/products2/pl/20/00/02/81/pl2000028180_card6_lg.jpg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(47)" class="buy-btn">Buy</button> <button onclick="cart(47)" class="cart-btn">Cart</button> </div> </div> <div id="plant-48" class="plantlist"> <figure> <figcaption class="plant-caption">Cat palm</figcaption> <img src="https://cdn.shopify.com/s/files/1/0068/4215/5090/t/115/assets/9aa0b63dad79--Catpalm-10IN-Grower-639a78.jpg?v=1611509773" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(48)" class="buy-btn">Buy</button> <button onclick="cart(48)" class="cart-btn">Cart</button> </div> </div> <div id="plant-49" class="plantlist"> <figure> <figcaption class="plant-caption">Rattlesnake plant</figcaption> <img src="https://www.thespruce.com/thmb/8N5wbgb5ThC8Kz3alYuLeiWEg2E=/3000x0/filters:no_upscale():max_bytes(150000):strip_icc()/growing-rattlesnake-plants-5088292-3-c37f03dd6a0e491a91e837d28d06b1f2.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs367</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(49)" class="buy-btn">Buy</button> <button onclick="cart(49)" class="cart-btn">Cart</button> </div> </div> <div id="plant-50" class="plantlist"> <figure> <figcaption class="plant-caption">Pin stripe plant</figcaption> <img src="https://terrariumtribe.com/wp-content/uploads/2021/07/Calathea-ornata-Pinstripe-Plant-4-600x900-1.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(50)" class="buy-btn">Buy</button> <button onclick="cart(50)" class="cart-btn">Cart</button> </div> </div> <div id="plant-51" class="plantlist"> <figure> <figcaption class="plant-caption">Norfolk island pine</figcaption> <img src="http://hgtvhome.sndimg.com/content/dam/images/grdn/fullset/2015/8/17/0/CI_norfolk-island-pine-araucaria.jpg.rend.hgtvcom.1280.1280.jpeg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(51)" class="buy-btn">Buy</button> <button onclick="cart(51)" class="cart-btn">Cart</button> </div> </div> <div id="plant-52" class="plantlist"> <figure> <figcaption class="plant-caption">Common asparagus fern</figcaption> <img src="https://i.etsystatic.com/20365330/r/il/4d8e80/2542154388/il_1140xN.2542154388_5i6o.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs299</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(52)" class="buy-btn">Buy</button> <button onclick="cart(52)" class="cart-btn">Cart</button> </div> </div> <div id="plant-53" class="plantlist"> <figure> <figcaption class="plant-caption">Persian cyclamen</figcaption> <img src="https://gardenseedsmarket.com/images/detailed/53/013657.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs315</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(53)" class="buy-btn">Buy</button> <button onclick="cart(53)" class="cart-btn">Cart</button> </div> </div> <div id="plant-54" class="plantlist"> <figure> <figcaption class="plant-caption">Japanese laurel</figcaption> <img src="https://www.charellagardens.co.uk/media/catalog/product/cache/b375fab3725443110d0577058efbd00d/a/u/aucuba_japonica_15_litre_2_.jpg" /> <figcaption style="position: relative; justify-self: flex-start;" class="plant-price"><h3>Price - Rs309</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(54)" class="buy-btn">Buy</button> <button onclick="cart(54)" class="cart-btn">Cart</button> </div> </div> </div>',
+            '<h1 style="font-size: 4rem; font-weight: 200;">House Plants</h1> <div id="plants"> <div id="plant-55" class="plantlist"> <figure> <figcaption class="plant-caption">Scarlet sage</figcaption> <img src="https://greenbook.co.in/wp-content/uploads/2023/09/4-3.png" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs500</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(55)" class="buy-btn">Buy</button> <button onclick="cart(55)" class="cart-btn">Cart</button> </div> </div> <div id="plant-56" class="plantlist"> <figure> <figcaption class="plant-caption">asterisk english ivy</figcaption> <img src="https://img.crocdn.co.uk/images/products2/pl/20/00/03/20/pl2000032062.jpg?width=940&height=940" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs490</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(56)" class="buy-btn">Buy</button> <button onclick="cart(56)" class="cart-btn">Cart</button> </div> </div> <div id="plant-57"class="plantlist"> <figure> <figcaption class="plant-caption">Red Emerald</figcaption> <img src="https://i.pinimg.com/originals/2c/8d/b6/2c8db6a6b5392dc312e78c5357f1f871.jpg" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs425</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(57)" class="buy-btn">Buy</button> <button onclick="cart(57)" class="cart-btn">Cart</button> </div> </div> <div id="plant-58" class="plantlist"> <figure> <figcaption class="plant-caption">Arrowhead vine \'Gold Allusion\'</figcaption> <img src="https://mobileimages.lowes.com/productimages/323fdcb3-9121-47f6-ada4-7d35cf8dafa1/62748343.jpg?size=pdhism" /> <figcaption style="position: relative; justify-self: flex-start;"class="plant-price"><h3>Price - Rs410</h3></figcaption> </figure> <div class="buycart"> <button onclick="buypage(58)" class="buy-btn">Buy</button> <button onclick="cart(58)" class="cart-btn">Cart</button> </div> </div> </div>'];
+
+        let navlist = ['<a href="#plant-1">Golden potho</a> <a href="#plant-2">Swiss cheese</a> <a href="#plant-3">corn plant</a> <a href="#plant-4">Spider plant</a> <a href="#plant-5">Zanzibar gem</a> <a href="#plant-6">Madagascar dragon tree</a> <a href="#plant-7">Rubber tree</a> <a href="#plant-8">Arrowhead plant</a> <a href="#plant-9">English ivy</a> <a href="#plant-10">Silver inch plant</a> <a href="#plant-11">Garden croton</a> <a href="#plant-12">Lucky bamboo</a> <a href="#plant-13">Dwarf umbrella</a> <a href="#plant-14">Weeping fig</a> <a href="#plant-15">parlor palmt</a> <a href="#plant-16">Baby rubber plant</a> <a href="#plant-17">Fiddle-leaf fig</a> <a href="#plant-18">Heartleaf philodendron</a>', '<a href="#plant-19">Chinese money plant</a> <a href="#plant-20">Common lantana</a> <a href="#plant-21">spineless yucca</a> <a href="#plant-22">Yellow butterfly palm</a> <a href="#plant-23">Boston fern</a> <a href="#plant-24">Polka dot planto</a> <a href="#plant-25">Prayer plant</a> <a href="#plant-26">Scarlet-star</a> <a href="#plant-27">Bird of paradise</a> <a href="#plant-28">nerve plant</a> <a href="#plant-29">Sago palm</a> <a href="#plant-30">busy lizzie</a> <a href="#plant-31">painted leaf begonia</a> <a href="#plant-32">Oyster plant</a> <a href="#plant-33">Chinese evergreen</a> <a href="#plant-34">Elephant Ear</a> <a href="#plant-35">Rose-Painted Calathea</a><a href="#plant-36">emerald ripple</a>', '<a href="#plant-37">Pink calla lily</a> <a href="#plant-38">Song of india plant</a> <a href="#plant-39">False shamrock</a> <a href="#plant-40">blushing philodendron</a> <a href="#plant-41">Swedish ivy</a> <a href="#plant-42"birds nest fern</a> <a href="#plant-43">Mexican mint</a> <a href="#plant-44">Calla lily</a> <a href="#plant-45">Peacock plant</a> <a href="#plant-46">Small-leaf spiderwort</a> <a href="#plant-47">Moth orchid</a> <a href="#plant-48">Cat palm</a> <a href="#plant-49">Rattlesnake plant</a> <a href="#plant-50">Pin stripe plant</a> <a href="#plant-51">Norfolk island pine</a> <a href="#plant-52">Common asparagus fernt</a> <a href="#plant-53">Persian cyclamen</a> <a href="#plant-54">Japanese laurel</a>', '<a href="#plant-55">Scarlet sage</a> <a href="#plant-56">asterisk english ivy</a> <a href="#plant-57">Red Emerald</a> <a href="#plant-58">Arrowhead vine \'Gold Allusion\'</a>'];
+
+        let content = document.getElementById("main-content");
+        let contentlist = document.getElementById("list-items");
+
+        function home() {
+            index = 0;
+            return setcontent();
+        }
+
+        function page1(i) {
+            index = i - 1;
+            return setcontent();
+        }
+
+        function pageprev() {
+            if (index === 0) {
+                document.getElementById("pageprev-btn").disabled = true;
             }
-        </script>
+            else {
+                document.getElementById("pagenext-btn").disabled = false;
+                index--;
+                return setcontent();
+            }
+        }
+        function pagenext() {
+            if (index === 3) {
+                document.getElementById("pagenext-btn").disabled = true;
+            }
+            else {
+                document.getElementById("pageprev-btn").disabled = false;
+                index++;
+                return setcontent();
+            }
+        }
+        function setcontent() {
+            content.innerHTML = pages[index];
+            contentlist.innerHTML = navlist[index];
+        }
+    </script>
 
+    <section id="cart" class="cartfull">
+        <button class="cart-btn">cart</button>
+        <div id="cart-show">
+            <div id="cart-items">
+            </div>
+            <div id="cart-total">
+                Nothing in cart
+            </div>
+            <button class="placeorder-btn">place order</button>
+        </div>
     </section>
-
-    <section id="cart">
-
-    </section>
+    <script>
+        var totalprice = 0;
+        var cartindex = 0;
+        function cart(n) {
+            let addc = document.getElementById("plant-" + n);
+            let oncart = addc.querySelector("figure");
+            let getprice = addc.querySelector("figcaption.plant-price").textContent;
+            let price = getprice.match(/\d+/g);
+            return addcart(oncart.innerHTML, price);
+        }
+        function addcart(item, p) {
+            cartindex++;
+            let cartsel = document.getElementById("cart-items");
+            let oneitem = document.createElement("div");
+            oneitem.id = "cartplant" + cartindex;
+            let divitem = document.createElement("div");
+            divitem.innerHTML = item;
+            oneitem.appendChild(divitem);
+            let para = document.createElement("p");
+            para.className = "cartprice";
+            para.innerHTML = p + " /-";
+            let removebtn = document.createElement("button");
+            removebtn.className = "remove-btn";
+            removebtn.innerText = "X";
+            para.appendChild(removebtn);
+            oneitem.appendChild(para);
+            cartsel.appendChild(oneitem);
+            removebtn.addEventListener("click", function () { alert("Hello World!"); });
+            return totalcart(p);
+        }
+        function totalcart(t) {
+            totalprice += parseInt(t);
+            document.getElementById("cart-total").innerHTML = "Total     -     " + totalprice + " /-";
+        }
+    </script>
 
     <section id="support">
         <footer>
