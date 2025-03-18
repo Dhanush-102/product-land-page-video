@@ -1,0 +1,365 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Open Sans, Sans-serif;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+#header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    float: top;
+    min-height: 80px;
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 5rem;
+    background-color: #fff;
+    margin-bottom: 20px;
+    z-index: 100;
+}
+
+#logo {
+    width: 60vw;
+    justify-self: flex-start;
+}
+
+#header-img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#search {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    width: 1200px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 0.5rem;
+}
+
+#search-input {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    padding: 0 20px;
+    font-size: 1rem;
+}
+
+#search-input:focus {
+    border: 5px solid #99ff88;
+    font-size: 1.2rem;
+}
+
+#search #search-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #EAF0CE;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+#search #search-btn:hover {
+    transform: scale(0.95, 0.95);
+}
+
+#search button #search-symb {
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+}
+
+#search button #search-symb rect {
+    transform: rotate(45deg);
+}
+
+#nav-bar {
+    justify-self: flex-end;
+}
+
+#nav-bar>ul {
+    display: flex;
+    flex-direction: row;
+    column-gap: 3rem;
+    justify-content: flex-end;
+    width: 40vw;
+    margin: 0;
+    padding: 0 20px;
+
+}
+
+#nav-bar li {
+    list-style: none;
+}
+
+#nav-bar a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    transition: all 0.5s;
+}
+
+#nav-bar a:hover {
+    text-decoration: none;
+    color: silver;
+    font-size: 18px;
+}
+
+#nav-bar a svg:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.nav-list-btn {
+    font-size: 1rem;
+    border: none;
+    background-color: #fff;
+    transition: all 0.5s;
+}
+
+.nav-list-btn:hover,
+.nav-list-btn:focus {
+    color: silver;
+    font-size: 18px;
+    display: block;
+}
+
+#list-items {
+    position: absolute;
+    left: 78%;
+    top: 65%;
+    min-width: 80px;
+    display: none;
+    text-align: left;
+    background-color: rgba(181, 210, 203, 0.5);
+    z-index: 1;
+}
+
+#nav-lst:hover #list-items {
+    display: block;
+}
+
+#list-items a {
+    display: block;
+    padding: 4px 10px;
+    text-decoration: none;
+}
+
+#list-items a:hover {
+    background-color: silver;
+    color: white;
+}
+
+#banners {
+    animation-name: fade1;
+    animation-duration: 10s;
+}
+
+@keyframes fade1 {
+    from {
+        opacity: 0.1;
+    }
+
+    ;
+
+    to {
+        opacity: 1;
+    }
+}
+
+.banner {
+    display: none;
+    position: relative;
+    width: 2200px;
+    height: 500px;
+    background-color: #ffffff;
+}
+
+.banner #banner-img-div {
+    width: 1000px;
+    height: 450px;
+}
+
+#banner-video-div .ban-video {
+    display: block;
+    position: relative;
+    left: -15%;
+    margin-top: 100px;
+    width: 100%;
+    height: 500px;
+    ;
+}
+
+#banner-cap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    line-height: 5rem;
+    z-index: 1;
+}
+
+#banner-cap h2 {
+    font-size: 4rem;
+    font-family: Urbanist, "Didact Gothic", Open Sans, Sans-serif;
+    font-weight: 450;
+    opacity: 0.8;
+}
+
+#banner-cap p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+#overview {
+    position: relative;
+    margin: 50px auto;
+    width: 100%;
+    text-align: center;
+}
+
+#plants {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+    row-gap: 6rem;
+    column-gap: 4rem;
+}
+
+#plants .plantlist {
+    width: 400px;
+    height: 400px;
+    transition: all 0.5s;
+}
+
+#plants .plantlist:hover {
+    transform: scale(1.1, 1.1);
+}
+
+#plants .plantlist figure {
+    width: 100%;
+    height: 100%;
+}
+
+#plants .plantlist img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#plants .plantlist .plant-caption {
+    margin-bottom: 10px;
+}
+
+#down-btns {
+    display: flex;
+    margin: 50px auto;
+}
+
+#down-btns .btns {
+    width: 50px;
+    height: 50px;
+}
+
+#down-btns .btns button {
+    width: 80%;
+    height: 100%;
+}
+
+#down-btns .btns button:focus {
+    background-color: #C6E2E9;
+}
+
+#reviews {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.review-section {
+    position: relative;
+    display: grid;
+    width: 1200px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 40px;
+}
+
+.show {
+    display: flex;
+}
+
+#LorR {
+    margin: 50px auto;
+
+}
+
+fieldset {
+    width: 400px;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 10px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+#form label {
+    display: block;
+    text-align: left;
+}
+
+#form input {
+    width: 250px;
+    height: 25px;
+}
+
+#form select {
+    width: 250px;
+    height: 25px;
+    font-size: 1rem;
+}
+
+#form #submit {
+    width: 120px;
+    height: 30px;
+    border-radius: 2rem;
+    font-size: 1rem;
+    background-color: #BFFFBC;
+    color: #000;
+    border: none;
+}
+
+legend {
+    text-align: center;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 900px) {
+    * {
+        width: 60%;
+    }
+}

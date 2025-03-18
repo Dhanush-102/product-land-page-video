@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Flex:opsz,wdth,wght,GRAD,XOPQ,XTRA,YOPQ,YTFI,YTUC@8..144,151,100..1000,5,70,510,60,788,760&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>GrowPlant login</title>
+</head>
+
+<body>
+    <main>
+        <section id="LorR" class="login">
+            <fieldset style="border: 2px solid #A8AEC1">
+                <h3>Sign in or Create account</h3>
+                <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <div>
+                        <label for="number"> Phone no</label>
+                        <input id="number" type="tel" min="6000000000" max="9999999999" value="+19 "
+                            placeholder="Enter Your Number" required />
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Enter Your Email" required />
+                    </div>
+                    <div>
+                        <label for="address">country-</label>
+                        <select id="country-dropdown" class="inputs" width:>
+                            <option value="None">none</option>
+                            <option value="None">India</option>
+                            <option value="None">Russia</option>
+                            <option value="None">Usa</option>
+                            <option value="None">Uk</option>
+                            <option value="None">France</option>
+                            <option value="None">China</option>
+                            <option value="None">Japan</option>
+                            <option value="None">Vietnam</option>
+                            <option value="None">Srilanka</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="address">Address:</label>
+                        <input id="address" type="text" required>
+                    </div>
+                    <div>
+                        <label for="state">State:</label>
+                        <input id="state" type="text" required>
+                    </div>
+                    <div>
+                        <label for="city">City:</label>
+                        <input id="city" type="text" required>
+                    </div>
+                    <div>
+                        <label for="zipcode">Zipcode:</label>
+                        <input id="zipcode" type="number" min="100000" required>
+                    </div>
+                    <div>
+                        <input id="submit" type="submit" value="Sign in">
+                    </div>
+                </form>
+            </fieldset>
+        </section>
+    </main>
+</body>
+
+</html>
