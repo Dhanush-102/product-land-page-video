@@ -465,8 +465,13 @@
             let plantpric = removeele.querySelector(".cartprice");
             let carttotalpric = document.getElementById("cart-total");
             let pprice = plantpric.innerText.match(/\d+/g);
-            carttotalpric.innerHTML = `Total     -    ${totalprice - parseInt(pprice)} /-`;
             totalprice -= parseInt(pprice);
+            if (totalprice > 0) {
+                carttotalpric.innerHTML = `Total     -    ${totalprice} /-`;
+            }
+            else {
+                carttotalpric.innerHTML = "Nothing in cart";
+            }
             removeele.remove();
         }
     </script>
