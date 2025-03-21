@@ -542,6 +542,59 @@ legend {
     text-align: center;
     font-weight: bolder;
 }
+#support {
+    width: 100vw;
+    padding: 40px 200px;
+}
+
+#support footer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10rem;
+    align-items: center;
+}
+
+#support div {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+#support ul li {
+    list-style-type: none;
+}
+
+.contact {
+    justify-self: flex-start;
+    text-align: left;
+}
+
+.contact p {
+    font-size: 1.5rem;
+    color: #FFAA68;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.contact ul {
+    display: flex;
+    flex-direction: column;
+    column-gap: 5rem;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.socialmedia p {
+    color: #FF7F75;
+    margin-bottom: 20px;
+}
+
+.socialmedia ul {
+    display: flex;
+    column-gap: 5rem;
+}
 
 @media only screen and (max-width: 900px) {
     * {
